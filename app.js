@@ -2,25 +2,47 @@
 // Iterators like advanced loops that can be paused. 
 // Generators are functions that can be paused and can return multiple values. 
 
-function nameIterator(names) {
-    let nextIndex = 0;
+// function nameIterator(names) {
+//     let nextIndex = 0;
 
-    return { // Return a object that has a 'next' function. 
-        next: function () { 
-            return nextIndex < names.length ?
-                { value: names[nextIndex++], done: false } : 
-                {done: true}
-        }
-    }
+//     return { // Return a object that has a 'next' function. 
+//         next: function () { 
+//             return nextIndex < names.length ?
+//                 { value: names[nextIndex++], done: false } : 
+//                 {done: true}
+//         }
+//     }
+// }
+
+// const nameArr = ['Patrick', 'Bob', 'Kishy', 'Devy', 'Timmy'];
+
+// const names = nameIterator(nameArr);
+
+// console.log(names.next().value)
+// console.log(names.next())
+// console.log(names.next())
+// console.log(names.next())
+// console.log(names.next().value)
+// console.log(names.next())
+
+// Generator Example - Function generates names using next() method also. 
+//Function needs an astrix next to it for js to know its a generator. 
+
+function* sayName() {
+    yield 'Davey';
+    yield 'Hass';
+    yield 'Doc';
+    yield 'Tommy';
 }
 
-const nameArr = ['Patrick', 'Bob', 'Kishy', 'Devy', 'Timmy'];
+const name = sayName();
 
-const names = nameIterator(nameArr);
+console.log(name.next().value);
+console.log(name.next());
+console.log(name.next().value);
+console.log(name.next().value);
 
-console.log(names.next())
-console.log(names.next())
-console.log(names.next())
-console.log(names.next())
-console.log(names.next())
-console.log(names.next())
+
+
+
+
