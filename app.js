@@ -28,20 +28,35 @@
 // Generator Example - Function generates names using next() method also. 
 //Function needs an astrix next to it for js to know its a generator. 
 
-function* sayName() {
-    yield 'Davey';
-    yield 'Hass';
-    yield 'Doc';
-    yield 'Tommy';
+// function* sayName() {
+//     yield 'Davey';
+//     yield 'Hass';
+//     yield 'Doc';
+//     yield 'Tommy';
+// }
+
+// const name = sayName();
+
+// console.log(name.next().value);
+// console.log(name.next());
+// console.log(name.next().value);
+// console.log(name.next().value);
+
+
+// ID Creator
+function* createIds() {
+    let index = 1;
+
+    while (true) {
+        yield index++;
+    }
 }
 
-const name = sayName();
+const gen = createIds();
 
-console.log(name.next().value);
-console.log(name.next());
-console.log(name.next().value);
-console.log(name.next().value);
-
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
 
 
 
